@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pruebni.Views.SurveyDetailsView"
+             Title="{Binding Name}"
+             xmlns:model="clr-namespace:pruebni.Models"
+             x:DataType="model:TodoItem">
+    
+    <ScrollView>
+    <VerticalStackLayout
+            Padding="20"
+            Spacing="10"
+            VerticalOptions="CenterAndExpand">
+
+        <Label Text="Name"/>
+        <Entry Text="{Binding Name}"/>
+        <Label Text="Fecha Nacimiento"/>
+        <DatePicker x:DataType="{Binding Birthdate}"/>
+        <Label x:Name="FavoriteTeamLabel"/>
+        <Button Text="{Binding FavoriteTeam}" Clicked="FavoriteTeamButton_Clicked"/>
+        <Button  Text="Aceptar" Clicked="OkButton_Clicked"/>
+        <Button Text="Delete" Clicked="OnButton_Clicked"/>
+        <Button Text="Cancel" Clicked="OnCalcelButton_Clicked"/>
+    </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
