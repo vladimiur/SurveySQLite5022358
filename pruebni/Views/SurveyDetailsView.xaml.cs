@@ -31,7 +31,7 @@ public partial class SurveyDetailsView : ContentPage
         InitializeComponent();
         database = todoItemDatabase;
     }
-
+    //Funcion de guardado
     private async void FavoriteTeamButton_Clicked(object sender, EventArgs e)
     {
         var favoriteTeam = await DisplayActionSheet(Literals.FavoriteTeamTitle, null, null, FavotitoEquipo);
@@ -48,7 +48,6 @@ public partial class SurveyDetailsView : ContentPage
             await DisplayAlert("Name Required", "Please enter a name for the todo item.", "OK");
             return;
         }
-        item.FavoriteTeam = FavoriteTeamLabel.Text;
         await database.SaveItemAsync(Item);
         await Shell.Current.GoToAsync("..");
 
